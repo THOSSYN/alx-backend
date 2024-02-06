@@ -10,6 +10,7 @@ babel = Babel(app)
 
 
 class Config:
+    """Configures language marker"""
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -28,6 +29,7 @@ def index_page():
     # title = _("home_title")
     # message = _("home_header")
     return render_template('3-index.html')
+
 
 if __name__ == '__main__':
     app.run()
