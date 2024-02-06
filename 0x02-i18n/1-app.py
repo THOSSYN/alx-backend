@@ -19,9 +19,9 @@ class Config:
 @app.route('/', methods=['GET'])
 def index_page() -> str:
     """Defines a route for an index page"""
-    title = "Welcome to Holberton"
-    message = "Hello world"
-    return render_template('1-index.html', title=title, message=message)
+    # title = "Welcome to Holberton"
+    # message = "Hello world"
+    return render_template('1-index.html', message=message)
 
 
 if __name__ == '__main__':
