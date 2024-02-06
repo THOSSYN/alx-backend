@@ -20,7 +20,7 @@ class Config:
 def index_page() -> str:
     """Defines a route for an index page"""
     # title = "Welcome to Holberton"
-    # message = "Hello world"
+    message = "Hello world"
     return render_template('1-index.html', message=message)
 
 
