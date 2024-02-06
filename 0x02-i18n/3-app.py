@@ -20,14 +20,14 @@ app.config.from_object(Config)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
+    """Returns a locale object for any language"""
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/', methods=['GET'])
-def index_page():
-    # title = _("home_title")
-    # message = _("home_header")
+def index_page() -> str:
+    """Defines an index page"""
     return render_template('3-index.html')
 
 
