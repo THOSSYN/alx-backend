@@ -9,9 +9,9 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def index_page() -> str:
     """Defines a route for an index page"""
-    title = "Welcome to Holberton"
-    message = "Hello world"
-    return render_template('0-index.html', title=title, message=message)
+    # title = "Welcome to Holberton"
+    # message = "Hello world"
+    return render_template('0-index.html')
 
 
 if __name__ == '__main__':
