@@ -53,7 +53,8 @@ def get_user():
     """Get user login details based on the ID passed in the URL parameter"""
     user_id = request.args.get('login_as')
     if user_id is not None and int(user_id) in users:
-        return users[int(user_id)]["name"]
+        # return users[int(user_id)]["name"]
+        return users[int(user_id)]
     return None
 
 
