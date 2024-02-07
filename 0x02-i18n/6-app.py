@@ -25,24 +25,17 @@ class Config:
 app.config.from_object(Config)
 
 
-#@babel.localeselector
-#def get_locale() -> str:
-    #Returns a locale object for any language"""
-    #if 'locale' in request.args and \
-            #request.args['locale'] in app.config['LANGUAGES']:
-        #return request.args['locale']
-    #return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-
 @babel.localeselector
 def get_locale() -> str:
     """Returns a locale object for any language"""
     user_setting = 'fr'
-    if 'locale' in request.args and request.args['locale'] in app.config['LANGUAGES']:
+    if 'locale' in request.args and \
+            request.args['locale'] in app.config['LANGUAGES']:
         return request.args['locale']
     elif user_setting and user_setting in app.config['LANGUAGES']:
         return user_setting
-    elif 'locale' in request.headers and request.headers['locale'] in app.config['LANGUAGES']:
+    elif 'locale' in request.headers and \
+            request.headers['locale'] in app.config['LANGUAGES']:
         return request.headers['locale']
     else:
         return Config.BABEL_DEFAULT_LOCALE
