@@ -22,7 +22,8 @@ app.config.from_object(Config)
 @babel.localeselector
 def get_locale() -> str:
     """Returns a locale object for any language"""
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    # return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return 'fr'
 
 
 @app.route('/', methods=['GET'])
@@ -32,4 +33,4 @@ def index_page() -> str:
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
